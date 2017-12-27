@@ -1,0 +1,76 @@
+html, body{
+  height: 100%;
+  background-color: #ccc;
+}
+
+.container{
+
+}
+
+.calculator{
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 40vw;
+  background-color: #9dd2ea;
+  padding: 10px;
+  margin-left: 30vw;
+  margin-right: 40vw;
+  margin-top: 20vh;
+  border-radius: 5px;
+  box-shadow: 6px 8px #74b3d0;
+}
+
+.screenWrapper {
+  display: grid;
+  grid-template-columns: 1fr 3.5fr;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  grid-auto-rows: minmax(45px, auto);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 0.2em;
+  grid-row-gap: 1em;
+  grid-column-gap: 1em;
+  grid-auto-rows: minmax(45px, auto);
+}
+
+.button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 45px;
+  color: #888;
+  background-color: white;
+  border-radius: 3px;
+  text-align: center;
+  cursor: pointer;
+  align-self: center;
+  box-shadow: 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all ease 0.1s;
+}
+
+.button:hover {
+  background-color: #9c89f6;
+  color: white;
+  box-shadow: 2px 4px #6b54d3;
+}
+
+.clearScreen{
+  background: rgb(255, 159, 168);
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.screen {
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-top:5px;
+  margin-bottom: 5px;
+}
+
+#equal {
+  background-color: rgb(241, 255, 146);
+}
