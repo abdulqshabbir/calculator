@@ -9,6 +9,8 @@ html, body{
 
 .calculator{
   display: grid;
+  align-items: stretch;
+  justify-content: start;
   grid-template-columns: 1fr;
   width: 40vw;
   background-color: #9dd2ea;
@@ -46,9 +48,9 @@ html, body{
   border-radius: 3px;
   text-align: center;
   cursor: pointer;
-  align-self: center;
   box-shadow: 2px 4px rgba(0, 0, 0, 0.2);
   transition: all ease 0.1s;
+  transition: box-shadow ease 0.3s;
 }
 
 .button:hover {
@@ -69,8 +71,4 @@ html, body{
   background-color: rgba(0, 0, 0, 0.2);
   margin-top:5px;
   margin-bottom: 5px;
-}
-
-#equal {
-  background-color: rgb(241, 255, 146);
 }
