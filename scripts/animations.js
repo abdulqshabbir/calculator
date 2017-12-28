@@ -1,4 +1,6 @@
-const buttons = Array.from(document.querySelectorAll('.button'));
+const buttons = Array.from(document.querySelectorAll('.button:not(.clearScreen)'));
+
+//-------------------HANDLE BUTTON ANIMATIONS -----------------------//
 
 buttons.forEach(button => (
   button.addEventListener('mousedown', function(e) {
@@ -24,9 +26,7 @@ buttons.forEach(button => (
   })
 ));
 
-
 function animateButtonPress(event) {
-  console.log(event.target);
   const buttonPressed = event.target;
   buttonPressed.setAttribute('style', 'box-shadow: 0px 0px;');
 }
