@@ -1,6 +1,26 @@
 'use strict';
+/*
+
+Data Structure: Calculator Object
+calculator: {
+  userInput
+}
+
+Pseudo code for calculator logic:
+1. Listen to button clicks -> on click add the value of the button click
+    to the dipslay -> store the value into storage (input array)
+      **accept no more than 26 character inputs for one number
+2. Listen for button cliks that are operations (+/-/div/x) -> on click of
+    these buttons -> move number currently in storage into another location (second Num)
+    -> clear the display and listen for more inputs
+3. Listen for more button clicks (same as step 1)
+4. Once equal sign is clicked (OR one of the other four operations are clicked) ->
+    take the two numbers in storage
+
+*/
 
 //----------------------- Retrieve DOM Elements -----------------------------//
+const buttons = Array.from(document.querySelectorAll('.button:not(.clearScreen)'));
 const addButton = document.querySelector('#add');
 const subtractButton = document.querySelector('#subtract');
 const multiplyButton = document.querySelector('#multiply');
@@ -86,4 +106,48 @@ function operate(operator, x, y) {
       return divide(x, y);
       break;
   }
+}
+
+buttons.forEach(button => (
+  button.addEventListener('mousedown', function(e) {
+    animateButtonPress(e);
+  })
+));
+
+buttons.forEach(button => (
+  button.addEventListener('mouseup', function(e) {
+    animateButtonRelease(e);
+  })
+));
+
+buttons.forEach(button => (
+  button.addEventListener('mouseleave', function(e) {
+    handleMouseLeave(e);
+  })
+));
+
+buttons.forEach(button => (
+  button.addEventListener('mouseenter', function(e) {
+    handleMouseEnter(e);
+  })
+));
+
+function animateButtonPress(event) {
+  const buttonPressed = event.target;
+  buttonPressed.setAttribute('style', 'box-shadow: 0px 0px;');
+}
+
+function animateButtonRelease(e) {
+  const buttonPressed = event.target;
+  buttonPressed.setAttribute('style', 'box-shadow: 2px 4px #6b54d3')
+}
+
+function handleMouseLeave(e) {
+  const buttonPressed = event.target;
+  buttonPressed.setAttribute('style','box-shadow: 2px 4px rgba(0, 0, 0, 0.2);')
+}
+
+function handleMouseEnter(e) {
+  const buttonPressed = event.target;
+  buttonPressed.setAttribute('style','box-shadow: 2px 4px #6b54d3')
 }
